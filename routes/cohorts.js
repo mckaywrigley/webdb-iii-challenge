@@ -36,4 +36,16 @@ router.get("/", (req, res) => {
     });
 });
 
+router.get("/:id", (req, res) => {
+  const { id } = req.params;
+  db("cohorts")
+    .where({ id })
+    .then(cohort => {
+      return res.status(200).json(cohort);
+    })
+    .catch(err => {
+      return res.status(404).json({ error: "Cohorts could not be found." });
+    });
+});
+
 module.exports = router;
