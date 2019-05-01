@@ -75,4 +75,19 @@ router.put("/:id", (req, res) => {
     });
 });
 
+router.delete("/:id", (req, res) => {
+  const { id } = req.params;
+  db("cohorts")
+    .where({ id })
+    .del()
+    .then(cohort => {
+      res.status(204).json(cohort);
+    })
+    .catch(err => {
+      res
+        .status(404)
+        .json({ error: "Could not delete the cohort with that id." });
+    });
+});
+
 module.exports = router;
