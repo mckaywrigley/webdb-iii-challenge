@@ -48,4 +48,18 @@ router.get("/:id", (req, res) => {
     });
 });
 
+router.get("/:id/students", (req, res) => {
+  const { id } = req.params;
+  db("students")
+    .where({ cohort_id: id })
+    .then(students => {
+      return res.status(200).json(students);
+    })
+    .catch(err => {
+      return res
+        .status(404)
+        .json({ error: "Students could not be found for that cohort." });
+    });
+});
+
 module.exports = router;
