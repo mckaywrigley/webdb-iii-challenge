@@ -1,0 +1,19 @@
+{
+  "name": "webdb-iii-challenge",
+  "version": "1.0.0",
+  "description": "## Topics",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mckaywrigley/webdb-iii-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mckaywrigley/webdb-iii-challenge/issues"
+  },
+  "homepage": "https://github.com/mckaywrigley/webdb-iii-challenge#readme"
+}
