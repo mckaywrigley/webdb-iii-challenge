@@ -62,4 +62,17 @@ router.get("/:id/students", (req, res) => {
     });
 });
 
+router.put("/:id", (req, res) => {
+  const { id } = req.params;
+  db("cohorts")
+    .where({ id })
+    .update(req.body)
+    .then(cohort => {
+      res.status(200).json(cohort);
+    })
+    .catch(cohort => {
+      res.status(500).json({ error: "Cohort could not be updated." });
+    });
+});
+
 module.exports = router;
