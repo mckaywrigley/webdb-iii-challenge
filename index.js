@@ -1,10 +1,12 @@
 const express = require("express");
-const knex = require("knex");
-const sqlite3 = require("sqlite3");
 
 const app = express();
 
 app.use(express.json());
+
+const cohortRoutes = require("./routes/cohorts");
+
+app.use("/api/cohorts", cohortRoutes);
 
 const port = 4000;
 
