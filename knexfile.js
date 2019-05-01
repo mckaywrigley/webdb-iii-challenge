@@ -6,6 +6,9 @@ module.exports = {
     connection: {
       filename: "lambda.db3"
     },
+    seeds: {
+      directory: "./data/seeds"
+    },
     useNullAsDefault: true
   }
 };
